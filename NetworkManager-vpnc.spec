@@ -79,6 +79,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/NetworkManager/VPN/nm-vpnc-service.name
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dbus-1/system.d/nm-vpnc-service.conf
 %{_desktopdir}/nm-vpnc.desktop
-%dir %{_datadir}/gnome-vpn-properties
 %{_datadir}/gnome-vpn-properties/vpnc
 %{_iconsdir}/hicolor/*/*/*.png
