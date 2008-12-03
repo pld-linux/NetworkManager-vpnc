@@ -2,11 +2,12 @@ Summary:	NetworkManager VPN integration for vpnc
 Summary(pl.UTF-8):	Integracja NetworkManagera z vpnc
 Name:		NetworkManager-vpnc
 Version:	0.7.0
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://download.gnome.org/sources/NetworkManager-vpnc/0.7/%{name}-%{version}.tar.bz2
 # Source0-md5:	35b2df5e7f4e091087990193dd742b55
+Patch0:		%{name}-binary_path.patch
 URL:		http://projects.gnome.org/NetworkManager/
 BuildRequires:	GConf2-devel >= 2.0
 BuildRequires:	NetworkManager-devel >= 0.7.0
@@ -35,6 +36,7 @@ Integracja NetworkManagera z vpnc.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__intltoolize}
@@ -77,5 +79,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_sysconfdir}/NetworkManager/VPN/nm-vpnc-service.name
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dbus-1/system.d/nm-vpnc-service.conf
 %{_desktopdir}/nm-vpnc.desktop
+%dir %{_datadir}/gnome-vpn-properties
 %{_datadir}/gnome-vpn-properties/vpnc
 %{_iconsdir}/hicolor/*/*/*.png
