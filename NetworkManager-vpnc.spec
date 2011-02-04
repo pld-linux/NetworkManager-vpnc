@@ -2,7 +2,7 @@ Summary:	NetworkManager VPN integration for vpnc
 Summary(pl.UTF-8):	Integracja NetworkManagera z vpnc
 Name:		NetworkManager-vpnc
 Version:	0.8.2
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-vpnc/0.8/%{name}-%{version}.tar.bz2
@@ -22,9 +22,9 @@ BuildRequires:	libgnome-keyring-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
-Requires(post,postun):	gtk+2
+Requires(post,postun):	gtk-update-icon-cache
+Requires(post,postun):	hicolor-icon-theme
 Requires:	NetworkManager >= 0.8.2
-Requires:	hicolor-icon-theme
 Requires:	vpnc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -75,6 +75,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/nm-vpnc-service
 %attr(755,root,root) %{_libdir}/nm-vpnc-service-vpnc-helper
 %{_sysconfdir}/NetworkManager/VPN/nm-vpnc-service.name
-%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/dbus-1/system.d/nm-vpnc-service.conf
+%config(noreplace) %verify(not md5 mtime size) /etc/dbus-1/system.d/nm-vpnc-service.conf
 %{_datadir}/gnome-vpn-properties/vpnc
 %{_iconsdir}/hicolor/*/*/*.png
