@@ -1,16 +1,16 @@
 Summary:	NetworkManager VPN integration for vpnc
 Summary(pl.UTF-8):	Integracja NetworkManagera z vpnc
 Name:		NetworkManager-vpnc
-Version:	0.8.999
+Version:	0.9.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-vpnc/0.8/%{name}-%{version}.tar.bz2
-# Source0-md5:	899000776fb1253b561d1247039d12d5
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-vpnc/0.9/%{name}-%{version}.tar.bz2
+# Source0-md5:	6b73cc0668456824908ba7fda67cfd5a
 Patch0:		%{name}-binary_path.patch
 URL:		http://projects.gnome.org/NetworkManager/
 BuildRequires:	GConf2-devel >= 2.0
-BuildRequires:	NetworkManager-devel >= 0.8.999
+BuildRequires:	NetworkManager-devel >= 2:0.9.0
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	dbus-glib-devel >= 0.74
@@ -22,7 +22,7 @@ BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 Requires(post,postun):	gtk-update-icon-cache
-Requires:	NetworkManager >= 0.8.999
+Requires:	NetworkManager >= 2:0.9.0
 Requires:	hicolor-icon-theme
 Requires:	vpnc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
