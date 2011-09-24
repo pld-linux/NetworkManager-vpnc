@@ -44,7 +44,8 @@ Integracja NetworkManagera z vpnc.
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-%configure
+%configure \
+	--disable-static
 %{__make}
 
 %install
@@ -53,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/NetworkManager/*.{a,la}
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/NetworkManager/*.la
 
 %find_lang %{name}
 
