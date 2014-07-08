@@ -1,30 +1,34 @@
 Summary:	NetworkManager VPN integration for vpnc
 Summary(pl.UTF-8):	Integracja NetworkManagera z vpnc
 Name:		NetworkManager-vpnc
-Version:	0.9.8.6
+Version:	0.9.10.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-vpnc/0.9/%{name}-%{version}.tar.xz
-# Source0-md5:	ae7751aa3738fcd954d863d25e3720e2
+# Source0-md5:	1109597f5fa8b3c00472a23fdeb787f0
 Patch0:		%{name}-binary_path.patch
 URL:		http://projects.gnome.org/NetworkManager/
-BuildRequires:	GConf2-devel >= 2.0
-BuildRequires:	NetworkManager-devel >= 2:0.9.8.4
+BuildRequires:	NetworkManager-devel >= 2:0.9.10.0
+BuildRequires:	NetworkManager-gtk-lib-devel >= 0.9.10.0
 BuildRequires:	autoconf >= 2.52
 BuildRequires:	automake >= 1:1.9
 BuildRequires:	dbus-glib-devel >= 0.74
 BuildRequires:	gettext-devel
-BuildRequires:	gtk+3-devel >= 3.0.0
+BuildRequires:	glib2-devel >= 1:2.32
+BuildRequires:	gtk+3-devel >= 3.4
 BuildRequires:	intltool >= 0.35.0
-BuildRequires:	libgnome-keyring-devel
+BuildRequires:	libsecret-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	rpmbuild(macros) >= 1.311
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
-Requires:	NetworkManager >= 2:0.9.8.4
+Requires:	NetworkManager >= 2:0.9.10.0
+Requires:	NetworkManager-gtk-lib >= 0.9.10.0
+Requires:	glib2 >= 1:2.32
+Requires:	gtk+3 >= 3.4
 Requires:	hicolor-icon-theme
 Requires:	vpnc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -80,4 +84,4 @@ rm -rf $RPM_BUILD_ROOT
 %config(noreplace) %verify(not md5 mtime size) /etc/dbus-1/system.d/nm-vpnc-service.conf
 %{_datadir}/gnome-vpn-properties/vpnc
 %{_desktopdir}/nm-vpnc-auth-dialog.desktop
-%{_iconsdir}/hicolor/*/*/*.png
+%{_iconsdir}/hicolor/48x48/apps/gnome-mime-application-x-cisco-vpn-settings.png
