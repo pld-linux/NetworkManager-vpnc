@@ -1,10 +1,10 @@
---- NetworkManager-vpnc-0.7.0/src/nm-vpnc-service.c.orig	2008-12-03 01:51:28.000000000 +0000
-+++ NetworkManager-vpnc-0.7.0/src/nm-vpnc-service.c	2008-12-03 01:52:49.000000000 +0000
-@@ -25,6 +25,7 @@
- static const char *vpnc_binary_paths[] =
+--- NetworkManager-vpnc-1.0.0/src/nm-vpnc-service.c.orig	2014-12-21 17:49:21.441848609 +0100
++++ NetworkManager-vpnc-1.0.0/src/nm-vpnc-service.c	2014-12-21 17:49:59.958306614 +0100
+@@ -578,6 +578,7 @@ find_vpnc (void)
  {
- 	"/usr/sbin/vpnc",
-+	"/usr/bin/vpnc",
- 	"/sbin/vpnc",
- 	"/usr/local/sbin/vpnc",
- 	NULL
+ 	static const char *vpnc_paths[] = {
+ 		"/usr/sbin/vpnc",
++		"/usr/bin/vpnc",
+ 		"/sbin/vpnc",
+ 		"/usr/local/sbin/vpnc",
+ 		NULL
