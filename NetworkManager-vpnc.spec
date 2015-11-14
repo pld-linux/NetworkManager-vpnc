@@ -8,7 +8,7 @@ Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-vpnc/1.0/%{name}-%{version}.tar.xz
 # Source0-md5:	d6db51906c9c2765466fb765455ed11f
 Patch0:		%{name}-binary_path.patch
-URL:		http://projects.gnome.org/NetworkManager/
+URL:		https://wiki.gnome.org/Projects/NetworkManager
 BuildRequires:	NetworkManager-devel >= 2:1.0.0
 BuildRequires:	NetworkManager-gtk-lib-devel >= 1.0.6
 BuildRequires:	autoconf >= 2.52
