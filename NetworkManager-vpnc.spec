@@ -27,6 +27,7 @@ Requires:	NetworkManager >= 2:1.2.0
 Requires:	NetworkManager-gtk-lib >= 1.2.0
 Requires:	glib2 >= 1:2.32
 Requires:	gtk+3 >= 3.4
+Requires:	libsecret >= 0.18
 Requires:	vpnc
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
