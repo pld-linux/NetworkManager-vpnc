@@ -1,12 +1,12 @@
 Summary:	NetworkManager VPN integration for vpnc
 Summary(pl.UTF-8):	Integracja NetworkManagera z vpnc
 Name:		NetworkManager-vpnc
-Version:	1.2.4
+Version:	1.2.6
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/NetworkManager-vpnc/1.2/%{name}-%{version}.tar.xz
-# Source0-md5:	b482a231f25d3857fd320d7c0b25c785
+# Source0-md5:	4e88a3bde38e3921c2adb9983fb9d09f
 Patch0:		%{name}-binary_path.patch
 URL:		https://wiki.gnome.org/Projects/NetworkManager
 BuildRequires:	NetworkManager-devel >= 2:1.2.0
@@ -72,9 +72,9 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/NetworkManager/libnm-vpn-plugin-vpnc.so
 %attr(755,root,root) %{_libdir}/NetworkManager/libnm-vpn-plugin-vpnc-editor.so
 %attr(755,root,root) %{_libdir}/NetworkManager/libnm-vpnc-properties.so
-%attr(755,root,root) %{_libdir}/nm-vpnc-auth-dialog
-%attr(755,root,root) %{_libdir}/nm-vpnc-service
-%attr(755,root,root) %{_libdir}/nm-vpnc-service-vpnc-helper
+%attr(755,root,root) %{_libexecdir}/nm-vpnc-auth-dialog
+%attr(755,root,root) %{_libexecdir}/nm-vpnc-service
+%attr(755,root,root) %{_libexecdir}/nm-vpnc-service-vpnc-helper
 %{_prefix}/lib/NetworkManager/VPN/nm-vpnc-service.name
 %{_sysconfdir}/NetworkManager/VPN/nm-vpnc-service.name
 %config(noreplace) %verify(not md5 mtime size) /etc/dbus-1/system.d/nm-vpnc-service.conf
